@@ -1,0 +1,36 @@
+version: '3'
+services:
+  api:
+    build: .
+    container_name: ecampi_api
+    environment:
+      - RAILS_ENV=development
+    volumes:
+      - .:/courrier
+    ports:
+      - 3000:3000
+    tty: true
+    stdin_open: true
+    depends_on:
+      - redis
+      - mailcatcher
+  redis:
+    image: redis
+    container_name: ecampi_redis
+    volumes:
+      - ./data/redis:/data
+    ports:
+      - 6379:6379
+  db:
+    container_name: ecampi_db
+    image: postgres:11.5
+    ports:
+      - 5470:5432
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+  mailcatcher:
+    image: schickling/mailcatcher
+    container_name: ecampi_mailcatcher
+    ports:
+      - 1080:1080
+      - 1025:1025
