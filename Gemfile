@@ -10,6 +10,7 @@ gem 'pg', '~> 0.18.4'
 gem 'redis'
 gem 'sidekiq', '~> 5.0'
 gem 'faraday'
+gem 'devise'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
