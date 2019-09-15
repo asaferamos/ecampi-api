@@ -2,7 +2,7 @@
 set -e
 
 # Remove a potentially pre-existing server.pid for Rails.
-rm -f /courrier/tmp/pids/server.pid
+rm -f /ecampi/tmp/pids/server.pid
 
 if [ "$RAILS_ENV" == "development" ]; then
   rails s -p 3000 -b '0.0.0.0'

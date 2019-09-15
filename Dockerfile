@@ -1,13 +1,13 @@
 FROM ruby:2.6.3
 RUN apt-get update -qq
-RUN mkdir /courrier
+RUN mkdir /ecampi
 
-WORKDIR /courrier
-COPY Gemfile /courrier/Gemfile
-COPY Gemfile.lock /courrier/Gemfile.lock
+WORKDIR /ecampi
+COPY Gemfile /ecampi/Gemfile
+COPY Gemfile.lock /ecampi/Gemfile.lock
 RUN bundle install
-COPY . /courrier
+COPY . /ecampi
 
 EXPOSE 3000
 
-ENTRYPOINT [ "/courrier/entrypoint.sh" ]
+ENTRYPOINT [ "/ecampi/entrypoint.sh" ]
