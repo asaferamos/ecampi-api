@@ -9,6 +9,12 @@ Rails.application.routes.draw do
         passwords:     'devise/passwords'
       }
 
+      devise_for :admins, controllers: {
+        registrations: 'devise/registrations',
+        sessions:      'devise/sessions',
+        passwords:     'devise/passwords'
+      }
+
       resources :accounts
     end
   end
