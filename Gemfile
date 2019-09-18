@@ -11,7 +11,7 @@ gem 'redis'
 gem 'sidekiq', '~> 5.0'
 gem 'faraday'
 gem 'devise'
-
+gem 'pry-rails'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
